@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+    background-color: #7e71f3;
+    background-image: linear-gradient(147deg, #7e71f3 0%, #8bb5f3 74%);
+    min-height: 100vh;
+    font-family: "Fira Sans", sans-serif;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .content {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .parent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    background-image: linear-gradient(147deg, #7e71f3 0%, #8bb5f3 74%);
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    font-size: 12px;
+  }
+  
+  .box:hover {
+    box-shadow: 0px 0px 20px #8bb5f3;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+</style>
+<body>
+    <div class="content">
+        <div class="parent">
+        </div>
+    </div>
+</body>
+<script>
+    const array = [
+    {name: '404页面', id: 0},
+    {name: '哔哩哔哩banner', id: 1},
+    {name: '窗边风景动画', id: 2},
+    {name: '火柴盒动画', id: 3},
+    {name: '加载页面动画', id: 4},
+    {name: '咖啡选择', id: 5},
+    {name: '卡片反转时钟', id: 6},
+    {name: '卡片式图片', id: 7},
+    {name: '蜡烛吹灭动画', id: 8},
+    {name: '日历便签', id: 9},
+    {name: '手风琴相册', id: 10},
+    {name: '烟花特效', id: 11},
+    {name: '睡觉的熊', id: 12},
+    {name: '搜索框设计', id: 13},
+    {name: '图片切换', id: 14},
+    {name: '文本变形', id: 15},
+    {name: '旋转菜单', id: 16},
+    {name: '早安晚安', id: 17},
+    {name: 'ToDoList', id: 18},
+    {name: '鬼魂动画', id: 19},
+  ];
+  const addresses = [
+    {url:'./404页面（css）/index.html'},
+    {url:'./哔哩哔哩banner（css+js）/冬/index.html'},
+    {url:'./窗边风景动画（css+js）/index.html'},
+    {url:'./火柴盒动画（css）/index.html'},
+    {url:'./加载页面动画Ⅰ（css）/index.html'},
+    {url:'./咖啡选择（css+js）/index.html'},
+    {url:'./卡片翻转时钟（css+js）/index.html'},
+    {url:'./卡片式图片展示（css+js）/index.html'},
+    {url:'./蜡烛吹灭动画（css）/index.html'},
+    {url:'./日历便签设计（css+js）/index.html'},
+    {url:'./手风琴相册设计（css）/index.html'},
+    {url:'./烟花特效（css+js）/index.html'},
+    {url:'./睡觉的熊动画（css）/index.html'},
+    {url:'./搜索框设计（css+js）/index.html'},
+    {url:'./图片切换（css）/index.html'},
+    {url:'./文本变形动画（css+js）/index.html'},
+    {url:'./旋转菜单（css）/index.html'},
+    {url:'./早安、晚安动画（css+js）/index.html'},
+    {url:'./To-Do-List设计（css+js）/index.html'},
+    {url:'./一个有趣的鬼魂动画（css+js）/index.html'},
+  ]
+  
+  const parent = document.querySelector('.parent');
+
+    for (let i = 0; i < array.length; i++) {
+        const obj = array[i];
+        const newDiv = document.createElement('div');
+        newDiv.textContent = obj.name;
+        newDiv.classList.add('box'); // 添加一个样式类名
+
+        newDiv.addEventListener('click',function() {
+            if (addresses[obj.id] && addresses[obj.id].url) {
+                window.location.href = addresses[obj.id].url;
+            }else {
+                console.log('待开发。。。。');
+            }
+        })
+        parent.appendChild(newDiv);
+    }
+</script>
+</html>
